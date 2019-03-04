@@ -1,3 +1,106 @@
 .App {
-  color: blue;
-  background: red; }
+  width: 100vw;
+  height: 100vh;
+  background: blue; }
+
+.panel-login {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 900px;
+  height: 450px;
+  background: #3c415e;
+  color: white;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  overflow: hidden; }
+
+.botonSinEstilo {
+  border-style: none;
+  outline-style: none;
+  background: none;
+  cursor: pointer; }
+
+.panel-login-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  background: white;
+  width: 50%; }
+
+.logoM {
+  width: 50%;
+  height: auto;
+  margin: 5%; }
+
+.panel-login-1 div {
+  width: 65%;
+  height: 9%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  border: 1px solid #9c9c9c;
+  box-shadow: 0px 1px 15px #b8ebff, 0px -1px 15px #b8ebff;
+  margin: 2%;
+  border-radius: 10px; }
+
+.icono {
+  width: 30px;
+  height: 30px;
+  margin-top: 1%; }
+
+.panel-login-1 input {
+  width: 80%;
+  height: 35px;
+  margin-left: 3%;
+  border: none;
+  outline-style: none; }
+
+.boton-nuevaCuenta {
+  -webkit-align-self: center;
+          align-self: center;
+  margin-left: 40%;
+  color: #2061ac; }
+
+.panel-login-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  text-align: center;
+  font-size: 1em;
+  margin: 2.5%;
+  height: 90%;
+  width: 45%; }
+
+.panel-login-2 p {
+  color: #b1b1b1;
+  font-size: 0.9em;
+  margin-top: -2%; }

@@ -11,3 +11,6 @@ gulp.task('convert', ()=>
         }))
         .pipe(gulp.dest('./src/css'))
 );
+
+gulp.task('default', ()=>
+    gulp.watch('./src/scss/*.scss', gulp.series('convert')));
