@@ -2,4 +2,4 @@
 Praáctica Ecommerce
 Por Oscar Aparisi Sancho
 
-Link: "# practicaEcommerce" 
+Link: "http://oscarestudioskr.github.io/practicaEcommerce" 
