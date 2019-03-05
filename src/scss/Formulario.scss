@@ -7,6 +7,7 @@ $color3: rgb(184, 235, 255);
 .panel-login{
     position: absolute;
     width: 900px;
+    max-width: 100%;
     height: 450px;
     top: -10%;
     left: 0;
@@ -17,6 +18,7 @@ $color3: rgb(184, 235, 255);
     color: white;
     border-radius: 20px;
     display: flex;
+    flex-flow: row nowrap;
     overflow: hidden;
 }
 
@@ -61,6 +63,7 @@ $color3: rgb(184, 235, 255);
     width: 65%;
     height: 9%;
     display: flex;
+    flex-flow: row nowrap;
     justify-content: space-between;
     margin: 2%;
 }
@@ -91,7 +94,7 @@ $color3: rgb(184, 235, 255);
 }
 .boton-nuevaCuenta{
     color: rgb(32, 97, 172);
-    text-align: end;
+    width: 35%;
 }
 
 .panel-login-2-3{
@@ -126,3 +129,20 @@ $color3: rgb(184, 235, 255);
     width: 50%;
 }
 
+@media(max-width:720px){
+    .panel-login{
+        border-radius: 0px;
+        height: 100vh;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .panel-login-1, .panel-login-4{
+        width: 100%;
+        height: 70%;
+        
+    }
+    .panel-login-2-3{
+        width: 100%;
+        height: 30%;
+    }
+}

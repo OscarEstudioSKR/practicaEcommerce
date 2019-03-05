@@ -1,6 +1,7 @@
 .panel-login {
   position: absolute;
   width: 900px;
+  max-width: 100%;
   height: 450px;
   top: -10%;
   left: 0;
@@ -13,6 +14,10 @@
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   overflow: hidden; }
 
 .botonSinEstilo {
@@ -63,6 +68,10 @@
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
           justify-content: space-between;
@@ -95,7 +104,7 @@
 
 .boton-nuevaCuenta {
   color: #2061ac;
-  text-align: end; }
+  width: 35%; }
 
 .panel-login-2-3 {
   display: -webkit-box;
@@ -149,3 +158,21 @@
           align-items: center;
   background: white;
   width: 50%; }
+
+@media (max-width: 720px) {
+  .panel-login {
+    border-radius: 0px;
+    height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: column nowrap;
+            flex-flow: column nowrap; }
+  .panel-login-1, .panel-login-4 {
+    width: 100%;
+    height: 70%; }
+  .panel-login-2-3 {
+    width: 100%;
+    height: 30%; } }
