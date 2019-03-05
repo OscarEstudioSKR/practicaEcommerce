@@ -1,5 +1,13 @@
+.back {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 255, 0.63);
+  position: absolute;
+  z-index: 1; }
+
 .panel-login {
   position: absolute;
+  z-index: 2;
   width: 900px;
   max-width: 100%;
   height: 450px;
@@ -60,7 +68,8 @@
   border: 1px solid #9c9c9c;
   box-shadow: 0px 1px 15px #b8ebff, 0px -1px 15px #b8ebff;
   margin: 2%;
-  border-radius: 10px; }
+  border-radius: 10px;
+  background: none; }
 
 .contenedor-boton {
   width: 65%;
@@ -163,6 +172,7 @@
   .panel-login {
     border-radius: 0px;
     height: 100vh;
+    min-height: 400px;
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;

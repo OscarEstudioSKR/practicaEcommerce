@@ -11,7 +11,7 @@ class Formulario extends Component {
 
   render() {
     return (
-      <div>
+      <div className="back">
         { this.props.state.panel === "login" && <this.PanelLogin state={this.props.state}/> }
         { this.props.state.panel === "newUser" && <this.NewUser state={this.props.state}/> }
       </div>

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './css/App.css';
-import logoCecotec from './img/cecotec-logo.png';
 import Formulario from './Formulario.js';
-
+import Crud from './Crud.js';
 
 
 class App extends Component {
@@ -26,6 +25,7 @@ class App extends Component {
     return (
       <div className="App">
        <Formulario state={this.state}/>
+       <Crud state={this.state}/>
       </div>
     );
   }
