@@ -6,25 +6,23 @@ $color3: rgb(184, 235, 255);
 .App {
     width: 100vw;
     height: 100vh;
-    background: blue;
+    background: rgba(0, 0, 255, 0.233);
 }
 
 .panel-login{
     position: absolute;
+    width: 900px;
+    height: 450px;
     top: -10%;
     left: 0;
     bottom: 0;
     right: 0;
     margin: auto;
-
-    width: 900px;
-    height: 450px;
     background: $color1;
     color: white;
     border-radius: 20px;
     display: flex;
     overflow: hidden;
-
 }
 
 @mixin panel-50{
@@ -33,24 +31,27 @@ $color3: rgb(184, 235, 255);
     justify-content: center;
     align-items: center;
 }
+
 .botonSinEstilo{
     border-style: none;
     outline-style: none;
     background: none;
     cursor: pointer;
 }
+
 .panel-login-1{
     @include panel-50;
     background: white;
     width: 50%;
-
 }
+
 .logoM{
     width: 50%;
     height: auto;
     margin: 5%;
 }
-.panel-login-1 div{
+
+.contenedor-input{
     width: 65%;
     height: 9%;
     display: flex;
@@ -58,14 +59,21 @@ $color3: rgb(184, 235, 255);
     border: 1px solid rgb(156, 156, 156);
     box-shadow: 0px 1px 15px $color3, 0px -1px 15px $color3;
     margin: 2%;
-    border-radius: 10px;
-   
+    border-radius: 10px; 
+}
+.contenedor-boton{
+    width: 65%;
+    height: 9%;
+    display: flex;
+    justify-content: space-between;
+    margin: 2%;
 }
 .icono{
     width: 30px;
     height: 30px;
     margin-top: 1%;
 }
+
 .panel-login-1 input{
     width: 80%;
     height: 35px;
@@ -73,12 +81,21 @@ $color3: rgb(184, 235, 255);
     border: none;
     outline-style: none;
 }
-.boton-nuevaCuenta{
-    align-self: center;
-    margin-left: 40%;
-    
-    color: rgb(32, 97, 172)
+.boton-enviar{
+    border-radius: 15px;
+    width: 50%;
+    height: 35px;
+    padding: 3%;
+    background: linear-gradient(#7edbe7, #1cb3c8);
+    color: white;
+    outline-style: none;
+    font-weight: bold;
+    cursor: pointer;
 }
+.boton-nuevaCuenta{
+    color: rgb(32, 97, 172);
+}
+
 .panel-login-2{
     @include panel-50;
     text-align: center;

@@ -1,17 +1,17 @@
 .App {
   width: 100vw;
   height: 100vh;
-  background: blue; }
+  background: rgba(0, 0, 255, 0.233); }
 
 .panel-login {
   position: absolute;
+  width: 900px;
+  height: 450px;
   top: -10%;
   left: 0;
   bottom: 0;
   right: 0;
   margin: auto;
-  width: 900px;
-  height: 450px;
   background: #3c415e;
   color: white;
   border-radius: 20px;
@@ -48,7 +48,7 @@
   height: auto;
   margin: 5%; }
 
-.panel-login-1 div {
+.contenedor-input {
   width: 65%;
   height: 9%;
   display: -webkit-box;
@@ -62,6 +62,17 @@
   margin: 2%;
   border-radius: 10px; }
 
+.contenedor-boton {
+  width: 65%;
+  height: 9%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  margin: 2%; }
+
 .icono {
   width: 30px;
   height: 30px;
@@ -74,10 +85,19 @@
   border: none;
   outline-style: none; }
 
+.boton-enviar {
+  border-radius: 15px;
+  width: 50%;
+  height: 35px;
+  padding: 3%;
+  background: -webkit-linear-gradient(#7edbe7, #1cb3c8);
+  background: linear-gradient(#7edbe7, #1cb3c8);
+  color: white;
+  outline-style: none;
+  font-weight: bold;
+  cursor: pointer; }
+
 .boton-nuevaCuenta {
-  -webkit-align-self: center;
-          align-self: center;
-  margin-left: 40%;
   color: #2061ac; }
 
 .panel-login-2 {
