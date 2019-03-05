@@ -26,16 +26,19 @@ class Formulario extends Component {
       $('#mailErr').html('');
       $('#passErr').html('');
       e.preventDefault();
+        
+    if( event.state.users.some( ( user )=>{ return user.email === $( '#mail' ).val() }) === true){
+        event.state.users.map((user, i)=>{      
+            if(user.email === $('#mail').val() && user.pass === $('#pass').val()){
+    
+                event.state.changeState('userID', i);
+                event.state.changeState('panel', '');
+    
+            }else{$('#passErr').html('Contraseña incorrecta');}                       
+          });
+    }else{$('#mailErr').html('Correo no encontrado')}
 
-      event.state.users.map((user, i)=>{      
-        if(user.email === $('#mail').val() && user.pass === $('#pass').val()){        
-          event.state.changeState('userID', i);
-          event.state.changeState('panel', '');         
-        }else{
-          user.email != $('#mail').val() ? $('#mailErr').html('Correo no encontrado'):
-          user.pass != $('#pass').val() && $('#passErr').html('Contraseña incorrecta');
-        }
-      });
+
     }
 
     return(
@@ -60,7 +63,7 @@ class Formulario extends Component {
         </div>
         <div className="panel-login-2-3">
           <h1>Bienvenido!</h1>
-          <p className="descripcion-text">Binvenido al panel de gestión de tu Eccomerce. Por favor, introduce tus datos de usuario o crea una nueva cuenta.</p>
+          <p className="descripcion-text">Bienvenido al panel de gestión de tu Eccomerce. Por favor, introduce tus datos de usuario o crea una nueva cuenta.</p>
         </div>
       </form>
     )
