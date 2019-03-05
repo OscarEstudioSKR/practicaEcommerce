@@ -65,7 +65,7 @@ class App extends Component {
           <span id="mailErr" className="fallo"/>
           <div className="contenedor-input">
             <img className="icono" src={candado}/>
-            <input id="pass" type="text" placeholder="Contraseña" />
+            <input id="pass" type="password" placeholder="Contraseña" />
           </div>
           <span id="passErr" className="fallo"/>
           <div className="contenedor-boton">
@@ -81,7 +81,7 @@ class App extends Component {
     )
   }
   NewUser(event){
-    
+
     let cambiarPagina = ()=> event.state.changeState('panel', 'login');
 
     let validate = (e)=>{
@@ -95,6 +95,13 @@ class App extends Component {
       if ( /^\w+@\w+\.([a-zA-Z]{2,})+$/.test( $('#newMail').val() )){
         if(/\w{3,}/.test( $('#newName').val())){
           if(/\w{4,}/.test( $('#newPass').val())){
+
+            event.state.users.push({
+              'nombre': $('#newName').val(),
+              'email': $('#newMail').val(),
+              'pass': $('#newPass').val(),
+            });
+            cambiarPagina();
 
           } else{ $('#newPassErr').html('La contraseña tiene que ser más larga'); }
         } else{ $('#newNameErr').html('Nombre demasiado corto'); }
@@ -122,7 +129,7 @@ class App extends Component {
           <span id="newNameErr" className="fallo"/>
           <div className="contenedor-input">
             <img className="icono" src={candado}/>
-            <input id="newPass" type="text" placeholder="Contraseña" />          
+            <input id="newPass" type="password" placeholder="Contraseña" />          
           </div>
           <span id="newPassErr" className="fallo"/>
           <div className="contenedor-boton">
