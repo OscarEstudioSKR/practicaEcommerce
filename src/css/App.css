@@ -124,3 +124,7 @@
   color: #b1b1b1;
   font-size: 0.9em;
   margin-top: -2%; }
+
+.panel-login-1 span {
+  font-size: 0.7em;
+  color: red; }

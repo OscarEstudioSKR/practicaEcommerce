@@ -11,6 +11,7 @@ class App extends Component {
     super(props);
     this.state = {
       'panel': "login",
+      changeState: (campo, valor)=>this.setState({ [campo]: valor }),
       'users': [
         {
           'nombre': 'admin',
@@ -31,12 +32,20 @@ class App extends Component {
 
 
   PanelLogin(event){
+
     let validate = (e)=>{
       e.preventDefault();
       event.state.users.map((user)=>{
         if(user.email === $('#mail').val() && user.pass === $('#pass').val()){
-          return alert("Si");
-        }else{return alert("no")}
+
+          $('#mailErr').html('');
+          $('#passErr').html('');
+          event.state.changeState('panel', '');
+
+        }else{
+          user.email != $('#mail').val() && $('#mailErr').html('Correo no encontrado');
+          user.pass != $('#pass').val() && $('#passErr').html('Contraseña incorrecta');
+        }
       });
     }
 
@@ -46,14 +55,14 @@ class App extends Component {
           <img className="logoM" src={logoCecotec}/>
           <div className="contenedor-input">
             <img className="icono" src={correo}/>
-            <input id="mail" type="email" placeholder="Correo" />
-            <p className="mailErr"/>
+            <input id="mail" type="email" placeholder="Correo" />          
           </div>
+          <span id="mailErr"/>
           <div className="contenedor-input">
             <img className="icono" src={candado}/>
             <input id="pass" type="text" placeholder="Contraseña" />
-            <p className="passErr"/>
           </div>
+          <span id="passErr"/>
           <div className="contenedor-boton">
             <button className="boton-enviar" type="submit">Enviar</button>
             <button className="boton-nuevaCuenta botonSinEstilo">Nueva cuenta</button>
