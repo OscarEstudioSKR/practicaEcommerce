@@ -1,0 +1,165 @@
+.contenedor-crud form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
+  z-index: 2;
+  width: 750px;
+  height: 600px;
+  background: #3c415e;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  padding: 10px; }
+  .contenedor-crud form .section-1-form {
+    width: 46%;
+    height: 100%;
+    padding: 2%; }
+    .contenedor-crud form .section-1-form img {
+      width: 350px;
+      height: 510px;
+      border-radius: 15px; }
+    .contenedor-crud form .section-1-form button {
+      margin-top: 1%;
+      width: 100%;
+      height: 7%;
+      border-radius: 10px;
+      outline-style: none;
+      background: white;
+      color: #3c415e; }
+    .contenedor-crud form .section-1-form p {
+      font-size: 0.8em;
+      color: #9c9c9c;
+      text-align: center;
+      margin: 1%; }
+  .contenedor-crud form .section-2-form {
+    width: 46%;
+    height: 100%;
+    padding: 2%; }
+    .contenedor-crud form .section-2-form h1 {
+      color: white;
+      text-align: center;
+      width: 100%;
+      height: 10%; }
+    .contenedor-crud form .section-2-form input {
+      text-align: center;
+      width: 100%;
+      height: 5%; }
+    .contenedor-crud form .section-2-form div {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-flow: row wrap;
+              flex-flow: row wrap; }
+
+.contenedor-crud nav {
+  width: 100%;
+  height: 30px;
+  background: #e9e9e9;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center; }
+  .contenedor-crud nav img {
+    width: 25px; }
+  .contenedor-crud nav a {
+    margin-right: 1%;
+    margin-left: 1%;
+    cursor: pointer; }
+
+.contenedor-crud header {
+  background: #e9e9e9;
+  width: 100%;
+  height: 260px; }
+  .contenedor-crud header div {
+    height: 80%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center; }
+    .contenedor-crud header div img {
+      width: 20%;
+      max-width: 200px; }
+    .contenedor-crud header div h2 {
+      color: #738598;
+      font-size: 0.9em;
+      text-align: center; }
+  .contenedor-crud header nav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center;
+    color: white;
+    background: #738598;
+    width: 100%;
+    height: 20%; }
+    .contenedor-crud header nav a {
+      margin: 1%;
+      font-weight: bold;
+      cursor: pointer; }
+
+.contenedor-crud div {
+  position: relative;
+  width: 100%; }
+  .contenedor-crud div img {
+    width: 100%; }
+  .contenedor-crud div #boton-new-product {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1;
+    width: 300px;
+    max-width: 50%;
+    height: 60px;
+    background: none;
+    border: 1px solid red;
+    outline-style: none;
+    box-shadow: 1px 1px 5px blue;
+    border-radius: 15px;
+    color: #00b3ca;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer; }
+  .contenedor-crud div #boton-new-product:hover {
+    width: 305px;
+    height: 65px;
+    font-size: 1.3em; }

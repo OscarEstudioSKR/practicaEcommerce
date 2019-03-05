@@ -8,23 +8,29 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      'panel': "login",
+      'panel': "",
       changeState: (campo, valor)=>this.setState({ [campo]: valor }),
-      'userID': "",
+      'userID': 0,
       'users': [
         {
           'nombre': 'admin',
           'email': 'admin@gmail.com',
           'pass': '1234',
         }
-      ]
+      ],
+      'filter': [
+        'hombre',
+        'mujer',
+      ],
+      'filterSelected': 0,
+      'store': [{}],
     }
   }
 
   render() {
     return (
       <div className="App">
-       <Formulario state={this.state}/>
+       {(this.state.panel == "login" || this.state.panel == "newUser") && <Formulario state={this.state}/>}
        <Crud state={this.state}/>
       </div>
     );
