@@ -54,9 +54,9 @@
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+          justify-content: flex-start;
   border: 1px solid #9c9c9c;
   box-shadow: 0px 1px 15px #b8ebff, 0px -1px 15px #b8ebff;
   margin: 2%;
@@ -76,9 +76,10 @@
 .icono {
   width: 30px;
   height: 30px;
-  margin-top: 1%; }
+  margin-top: 1%;
+  margin-left: 5px; }
 
-.panel-login-1 input {
+#pass, #mail {
   width: 80%;
   height: 35px;
   margin-left: 3%;
@@ -98,9 +99,10 @@
   cursor: pointer; }
 
 .boton-nuevaCuenta {
-  color: #2061ac; }
+  color: #2061ac;
+  text-align: end; }
 
-.panel-login-2 {
+.panel-login-2-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -120,11 +122,35 @@
   height: 90%;
   width: 45%; }
 
-.panel-login-2 p {
+.descripcion-text {
   color: #b1b1b1;
   font-size: 0.9em;
   margin-top: -2%; }
 
-.panel-login-1 span {
+.fallo {
   font-size: 0.7em;
   color: red; }
+
+.panel-login-4 input {
+  font-size: 0.9em;
+  background: none;
+  border-style: none;
+  outline-style: none;
+  padding-left: 3%; }
+
+.panel-login-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  background: white;
+  width: 50%; }

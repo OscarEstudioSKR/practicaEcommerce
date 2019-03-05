@@ -55,11 +55,12 @@ $color3: rgb(184, 235, 255);
     width: 65%;
     height: 9%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     border: 1px solid rgb(156, 156, 156);
     box-shadow: 0px 1px 15px $color3, 0px -1px 15px $color3;
     margin: 2%;
     border-radius: 10px; 
+    
 }
 .contenedor-boton{
     width: 65%;
@@ -72,9 +73,10 @@ $color3: rgb(184, 235, 255);
     width: 30px;
     height: 30px;
     margin-top: 1%;
+    margin-left: 5px;
 }
 
-.panel-login-1 input{
+#pass, #mail{
     width: 80%;
     height: 35px;
     margin-left: 3%;
@@ -94,9 +96,10 @@ $color3: rgb(184, 235, 255);
 }
 .boton-nuevaCuenta{
     color: rgb(32, 97, 172);
+    text-align: end;
 }
 
-.panel-login-2{
+.panel-login-2-3{
     @include panel-50;
     text-align: center;
     font-size: 1em;
@@ -105,13 +108,26 @@ $color3: rgb(184, 235, 255);
     width: 45%;  
 }
 
-.panel-login-2 p{
+.descripcion-text{
     color: $color2;
     font-size: 0.9em;
     margin-top: -2%;
 }
 
-.panel-login-1 span{
+.fallo{
     font-size: 0.7em;
     color: red;
 }
+.panel-login-4 input{
+    font-size: 0.9em;
+    background: none;
+    border-style: none;
+    outline-style: none;
+    padding-left: 3%;
+}
+.panel-login-4{
+    @include panel-50;
+    background: white;
+    width: 50%;
+}
+
