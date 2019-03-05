@@ -1,0 +1,128 @@
+$color1: #3c415e;
+$color2: #b1b1b1;
+$color3: rgb(184, 235, 255);
+
+
+
+.panel-login{
+    position: absolute;
+    width: 900px;
+    height: 450px;
+    top: -10%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background: $color1;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+}
+
+@mixin panel-50{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.botonSinEstilo{
+    border-style: none;
+    outline-style: none;
+    background: none;
+    cursor: pointer;
+}
+
+.panel-login-1{
+    @include panel-50;
+    background: white;
+    width: 50%;
+}
+
+.logoM{
+    width: 50%;
+    height: auto;
+    margin: 5%;
+}
+
+.contenedor-input{
+    width: 65%;
+    height: 9%;
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid rgb(156, 156, 156);
+    box-shadow: 0px 1px 15px $color3, 0px -1px 15px $color3;
+    margin: 2%;
+    border-radius: 10px; 
+    
+}
+.contenedor-boton{
+    width: 65%;
+    height: 9%;
+    display: flex;
+    justify-content: space-between;
+    margin: 2%;
+}
+.icono{
+    width: 30px;
+    height: 30px;
+    margin-top: 1%;
+    margin-left: 5px;
+}
+
+#pass, #mail{
+    width: 80%;
+    height: 35px;
+    margin-left: 3%;
+    border: none;
+    outline-style: none;
+}
+.boton-enviar{
+    border-radius: 15px;
+    width: 50%;
+    height: 35px;
+    padding: 3%;
+    background: linear-gradient(#7edbe7, #1cb3c8);
+    color: white;
+    outline-style: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.boton-nuevaCuenta{
+    color: rgb(32, 97, 172);
+    text-align: end;
+}
+
+.panel-login-2-3{
+    @include panel-50;
+    text-align: center;
+    font-size: 1em;
+    margin: 2.5%;
+    height: 90%;
+    width: 45%;  
+}
+
+.descripcion-text{
+    color: $color2;
+    font-size: 0.9em;
+    margin-top: -2%;
+}
+
+.fallo{
+    font-size: 0.7em;
+    color: red;
+}
+.panel-login-4 input{
+    font-size: 0.9em;
+    background: none;
+    border-style: none;
+    outline-style: none;
+    padding-left: 3%;
+}
+.panel-login-4{
+    @include panel-50;
+    background: white;
+    width: 50%;
+}
+
