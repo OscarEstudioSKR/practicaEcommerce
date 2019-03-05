@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 import './css/App.css';
 import logoCecotec from './img/cecotec-logo.png';
 import correo from './img/email.png';
@@ -10,25 +11,37 @@ class App extends Component {
     super(props);
     this.state = {
       'panel': "login",
+      'users': [
+        {
+          'nombre': 'admin',
+          'email': 'admin@gmail.com',
+          'pass': '1234',
+        }
+      ]
     }
   }
 
   render() {
     return (
       <div className="App">
-        { this.state.panel === "login" && <this.PanelLogin /> }
+        { this.state.panel === "login" && <this.PanelLogin state={this.state}/> }
       </div>
     );
   }
 
 
-  PanelLogin(){
-    let validate = ()=>{
-      var mail = $('#mail').val();
-      var pass = $('#pass').val();
+  PanelLogin(event){
+    let validate = (e)=>{
+      e.preventDefault();
+      event.state.users.map((user)=>{
+        if(user.email === $('#mail').val() && user.pass === $('#pass').val()){
+          return alert("Si");
+        }else{return alert("no")}
+      });
     }
+
     return(
-      <form className="panel-login" onSubmit={validate()}>
+      <form className="panel-login" onSubmit={validate}>
         <div className="panel-login-1">
           <img className="logoM" src={logoCecotec}/>
           <div className="contenedor-input">

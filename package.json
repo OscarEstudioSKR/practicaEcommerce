@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "http://oscarestudioskr.github.io/practicaEcommerce",
   "dependencies": {
+    "jquery": "^3.3.1",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5"
