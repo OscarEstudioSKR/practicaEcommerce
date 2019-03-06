@@ -38,17 +38,29 @@ $color4: #434c54;
                 height: 510px;
                 border-radius: 15px;
             }
-            #archivo{
+            .contenedor-archivo{
                 position: absolute;
                 bottom: 11%;
                 right: 10%;
-                width: 20%;
+                width: 11%;
                 height: 7%;
                 border-radius: 10px;
-                background: none;
-                color: $color3;
-
+                background-image: url('../img/botonUpload.png');
+                background-size: 100% 100%;
+                #archivo{
+                    z-index: 2;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                }
             }
+            .contenedor-archivo:hover{
+                bottom: 10.5%;
+                right: 9.5%;
+                width: 12%;
+                height: 8%;
+            }
+            
             p{
                 font-size: 0.8em;
                 color: rgb(156, 156, 156);

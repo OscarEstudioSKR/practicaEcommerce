@@ -5,6 +5,7 @@ import imgTienda from './img/fondoTienda.jpg';
 import usuario from './img/usuario.png';
 import sinImagen from './img/sinImagen.png';
 import sinFoto from './img/sinFoto.jpeg';
+import botonUpload from './img/botonUpload.png';
 
 
 
@@ -26,6 +27,20 @@ class Crud extends Component {
 
     //Cierra y abre menus por nombre
     cambiarPagina(value){ this.props.state.changeState('panel', value) };
+
+    //Abre el menu editar
+    editarProducto(producto){
+        this.setState({
+            'id': producto.id,
+            'img':  producto.img,
+            'nombre':  producto.nombre,
+            'marca':  producto.marca,
+            'talla':  producto.talla,
+            'precio':  producto.precio,
+            'categorias':  producto.categorias,
+        });
+        this.cambiarPagina('newProduct');
+    }
 
      //Cambiar state del padre
      cambiarStatePadre(campo, value){ this.props.state.changeState(campo, value) };
@@ -91,7 +106,9 @@ class Crud extends Component {
             <form>
                 <section className="section-1-form">
                     <img src={this.state.img}/>
-                    <input type= "file" id="archivo" onChange={subirImagen}/>
+                    <div className="contenedor-archivo">
+                        <input type= "file" id="archivo" onChange={subirImagen}/>
+                    </div>
                     <p>*Tamaño de imagen recomendada (500px750px).</p>
                 </section>
 
@@ -107,7 +124,7 @@ class Crud extends Component {
                         return ( <div><input onChange={this.cambiarCategoria.bind(this)} name={item} className="checkbox" type="checkbox"/> {item.toUpperCase()}</div> )})}           
                     </label>
                     <div className="botones">
-                        <button onClick={()=>this.cambiarPagina('')} className="boton-form">Descartar</button>
+                        <button onClick={()=>this.cambiarPagina('')} className="boton-form">Eliminar</button>
                         <button onClick={this.validar.bind(this)} className="boton-form">Guardar</button>
                     </div>
                 </section>
@@ -141,7 +158,11 @@ class Crud extends Component {
                             <img src={obj.img}/>
                         </div>
                         <div className="cobertura-botones"></div>
-                        <button className="boton-1">Editar</button>
+                        <button className="boton-1" onClick={()=>{
+                            this.cambiarStatePadre.bind(this, 'store',this.props.state.store.splice(i,1));
+                            this.editarProducto(obj);
+                            }}>Editar</button>
+
                         <button onClick={()=>{
                             this.cambiarStatePadre.bind(this, 'store',this.props.state.store.splice(i,1));
                             this.cambiarPagina();}
