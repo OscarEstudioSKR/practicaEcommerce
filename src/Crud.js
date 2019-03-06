@@ -29,7 +29,7 @@ class Crud extends Component {
                 <h2>Panel de gestión de productos</h2>
             </div>
             <nav>
-                {this.props.state.filter.map((item)=>{ return <a className="enlace-nav">{item.toUpperCase()}</a> })}
+                {this.props.state.filter.map((item, i)=>{ return <a key={item+i} className="enlace-nav">{item.toUpperCase()}</a> })}
                 <a >NUEVA CATERGORÍA</a>
             </nav>
         </header>
@@ -43,6 +43,7 @@ class Crud extends Component {
   }
 
   NewProduct(event){
+    let cambiarPagina = (value)=> event.state.changeState('panel', value);
       return(
           <form>
             <section className="section-1-form">
@@ -52,11 +53,21 @@ class Crud extends Component {
             </section>
             <section className="section-2-form"> 
                 <h1>Nuevo producto</h1>
-                <input placeholder="Nombre"/>
-                <input placeholder="Descripción"/>
-                <input placeholder="Precio"/>
+                <input className="input-form" type='text' placeholder="Nombre"/>
+                <input className="input-form" type='text' placeholder="Marca"/>
+                <input className="input-form" type='number' placeholder="Talla"/>
+                <input className="input-form" type='number' placeholder="Precio"/>
+                <p>Categorías:</p>
+                <label className="caja-checkbox" >
+                {event.state.filter.map((item, i)=>{ 
+                    return (
+                        <div>    
+                            <input className="checkbox" type="checkbox"/> {item.toUpperCase()}
+                        </div>
+                        )})}           
+                </label>
                 <div className="botones">
-                  <button className="boton-form">Descartar</button>
+                  <button onClick={()=>cambiarPagina('')} className="boton-form">Descartar</button>
                   <button className="boton-form">Guardar</button>
                 </div>
             </section>

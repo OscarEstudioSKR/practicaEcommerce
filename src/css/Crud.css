@@ -7,9 +7,11 @@
   margin: auto;
   z-index: 1;
   z-index: 2;
-  width: 750px;
-  height: 600px;
-  background: #3c415e;
+  width: 900px;
+  height: 545px;
+  background: #434c54;
+  border: 2px solid #e9e9e9;
+  box-shadow: 1px 1px 80px #da35c43f;
   border-radius: 15px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -23,47 +25,79 @@
           align-items: center;
   padding: 10px; }
   .contenedor-crud form .section-1-form {
-    width: 46%;
+    width: 40%;
     height: 100%;
-    padding: 2%; }
+    padding: 2%;
+    position: relative; }
     .contenedor-crud form .section-1-form img {
       width: 350px;
       height: 510px;
       border-radius: 15px; }
     .contenedor-crud form .section-1-form button {
-      margin-top: 1%;
-      width: 100%;
+      position: absolute;
+      bottom: 11%;
+      right: 10%;
+      width: 20%;
       height: 7%;
       border-radius: 10px;
       outline-style: none;
-      background: white;
+      background: none;
       color: #3c415e; }
     .contenedor-crud form .section-1-form p {
       font-size: 0.8em;
       color: #9c9c9c;
       text-align: center;
-      margin: 1%; }
+      margin-top: -1%; }
   .contenedor-crud form .section-2-form {
-    width: 46%;
+    width: 50%;
     height: 100%;
-    padding: 2%; }
+    padding: 2%;
+    color: white; }
     .contenedor-crud form .section-2-form h1 {
-      color: white;
       text-align: center;
       width: 100%;
       height: 10%; }
-    .contenedor-crud form .section-2-form input {
-      text-align: center;
+    .contenedor-crud form .section-2-form .input-form {
       width: 100%;
-      height: 5%; }
-    .contenedor-crud form .section-2-form div {
+      height: 5%;
+      margin-bottom: 2%;
+      background: none;
+      border: none;
+      border-bottom: 1px solid #738598;
+      outline-style: none;
+      color: #e9e9e9;
+      font-size: 1em; }
+    .contenedor-crud form .section-2-form p {
+      border-bottom: 1px solid #738598; }
+    .contenedor-crud form .section-2-form .caja-checkbox {
+      font-size: 0.9em;
       display: -webkit-box;
       display: -webkit-flex;
       display: flex;
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
       -webkit-flex-flow: row wrap;
-              flex-flow: row wrap; }
+              flex-flow: row wrap;
+      height: 24%;
+      margin-bottom: 5%;
+      background: rgba(219, 219, 219, 0.089);
+      overflow-y: scroll; }
+      .contenedor-crud form .section-2-form .caja-checkbox .checkbox {
+        margin-left: 2%; }
+    .contenedor-crud form .section-2-form .botones {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-flow: row wrap;
+              flex-flow: row wrap;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+              justify-content: space-between; }
+      .contenedor-crud form .section-2-form .botones .boton-form {
+        width: 49%;
+        height: 50px; }
 
 .contenedor-crud nav {
   width: 100%;
