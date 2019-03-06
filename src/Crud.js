@@ -66,6 +66,22 @@ class Crud extends Component {
     }
 
   render() {
+      let subirImagen = (e)=>{
+        let archivo = e.target.files[0];
+        let lector = new FileReader();
+
+        if(archivo.type.match(/image/)){
+            lector.readAsDataURL(archivo);
+            lector.addEventListener('load',(e)=>{
+                this.setState({
+                    'img': e.target.result
+                });
+            },false);
+
+        }else{
+            alert("El archivo "+archivo.name+' no es una imagen!');
+        }
+      }
 
     return (
       <div className="contenedor-crud">
@@ -75,7 +91,10 @@ class Crud extends Component {
             <form>
                 <section className="section-1-form">
                     <img src={sinFoto}/>
-                    <button>Subir imagen</button>
+
+                    <input type= "file" id="archivo" onChange={subirImagen}/>
+
+                    
                     <p>*Tamaño de imagen recomendada (500px750px).</p>
                 </section>
 
