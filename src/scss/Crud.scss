@@ -85,7 +85,7 @@ $color4: #434c54;
             .caja-checkbox{
                 font-size: 0.9em;
                 display: flex;
-                flex-flow: row wrap;
+                flex-flow: column nowrap;
                 height: 24%;
                 margin-bottom: 5%;
                 background: rgba(219, 219, 219, 0.089);
@@ -137,7 +137,7 @@ $color4: #434c54;
             align-items: center;
             img{
                 width: 20%;
-                max-width: 200px;
+                max-width: 350px;
             }
             h2{
                 color: $color2;
@@ -159,9 +159,12 @@ $color4: #434c54;
                 font-weight: bold;
                 cursor: pointer;
             }
+            .a-destacada{
+                color: rgb(182, 182, 182);
+            }
         }
     }
-    div{
+    footer{
         position: relative;
         width: 100%;
         img{
@@ -173,7 +176,7 @@ $color4: #434c54;
             max-width: 50%;
             height: 60px;
             background: none;
-            border: 1px solid red;
+            border: 1px solid rgb(247, 0, 255);
             outline-style: none;
             box-shadow: 1px 1px 5px blue;
             border-radius: 15px;
@@ -188,7 +191,97 @@ $color4: #434c54;
             font-size: 1.3em;
         }
     }
+    main{
+        display: flex;
+        flex-flow: row wrap;
+        width: 75%; 
+        margin: auto;
+        
+
+        .obj-store{
+            position: relative;
+            width: 250px;
+            height: 495px;
+            margin: 1%;
+            border: 1px solid rgba(7, 44, 58, 0.342);
+            box-shadow: 1px 1px 30px rgba(74, 234, 255, 0.671);
+            img{
+                width: 100%;
+            }
+            .cobertura-botones{
+                position: absolute;
+                width: 100%;
+                height: 10%;
+                right: 0;
+                top: 0;
+                background: linear-gradient(90deg, rgba(255, 0, 0, 0), rgba(255, 255, 255, 0.87))
+            }
+            button{
+                position: absolute;
+                
+                height: 6%;
+                top: 2%;
+                border-radius: 10px;
+                outline-style: none;
+                border: 1px solid white;
+                color: $color1;
+                font-weight: bold;
+                
+            }
+            button:hover{
+                filter: brightness(1.1);
+            }
+            .boton-1{
+                right: 16%;
+                width: 20%;
+                background: linear-gradient( rgb(111, 171, 250),rgba(54, 155, 238, 0.932));
+            }
+            .boton-2{
+                right: 3%;
+                 width: 11%;
+                background: linear-gradient( rgb(250, 111, 204),rgba(238, 54, 155, 0.911));
+            }
+            .linea-datos{
+                width: 100%;
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                color: $color4;
+                font-size: 0.9em;
+
+                .p-marca{
+                    width: 48%;
+                    padding-left: 2%;
+                    
+                }
+                .p-nombre{
+                    width: 48%;
+                    padding-left: 3%;
+                    font-size: 1.1em;
+                }
+                .p-talla{
+                    width: 48%;
+                    padding-right: 2%;
+                    text-align: end;
+                    
+                }
+                .p-precio{
+                    width: 47%;
+                    font-size: 1.2em;
+                    padding-right: 2%;
+                    font-weight: bold;
+                    text-align: end;
+                }
+                
+
+
+            }
+        }
+    }
     
 }
+
+
+
 
 

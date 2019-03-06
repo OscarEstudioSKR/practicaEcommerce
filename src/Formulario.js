@@ -18,31 +18,34 @@ class Formulario extends Component {
     );
   }
 
-
+  //Panel principal de login
   PanelLogin(event){
 
+    //Cambiar al menú de nuevo usuario
     let cambiarPagina = ()=> event.state.changeState('panel', 'newUser');
+
+    //Validar ingreso de usuarios por correo y password
     let validate = (e)=>{
+      //Reiniciar mensajes de error
       $('#mailErr').html('');
       $('#passErr').html('');
       e.preventDefault();
-        
-    if( event.state.users.some( ( user )=>{ return user.email === $( '#mail' ).val() }) === true){
-        event.state.users.map((user, i)=>{      
-            if(user.email === $('#mail').val() && user.pass === $('#pass').val()){
-    
-                event.state.changeState('userID', i);
-                event.state.changeState('panel', '');
-    
-            }else{$('#passErr').html('Contraseña incorrecta');}                       
-          });
-    }else{$('#mailErr').html('Correo no encontrado')}
-
-
+      
+      //Validar que los campos de correo y password sean correctos para dar acceso o mostrar mensajes de error
+      if( event.state.users.some( ( user )=>{ return user.email === $( '#mail' ).val() }) === true){
+          event.state.users.map((user, i)=>{      
+              if(user.email === $('#mail').val() && user.pass === $('#pass').val()){
+      
+                  event.state.changeState('userID', i);
+                  event.state.changeState('panel', '');
+      
+              }else{$('#passErr').html('Contraseña incorrecta');}                       
+            });
+      }else{$('#mailErr').html('Correo no encontrado')}
     }
 
-    return(
-      
+    //Diseño del panel de login  
+    return(  
       <form className="panel-login" onSubmit={validate}>
         <div className="panel-login-1">
           <img className="logoM" src={logoCecotec}/>
@@ -68,17 +71,23 @@ class Formulario extends Component {
       </form>
     )
   }
+
+  //Menu de ingreso de nuevos usuarios
   NewUser(event){
 
+    //Cambiar a pestaña de login
     let cambiarPagina = ()=> event.state.changeState('panel', 'login');
 
+    //Valida si los campos de ingreso del nuevo usuario son correctos y los guarda
     let validate = (e)=>{
       e.preventDefault();
+
+      //Reinicia los valores de los campos de error a cero.
       $('#newMailErr').html('');
       $('#newNameErr').html('');
       $('#newPassErr').html('');
 
-      //Validación
+      //Validacion de correo, nombre y password, si no es correcto activa el mensaje de error
       $('#newMail').val()
       if ( /^\w+@\w+\.([a-zA-Z]{2,})+$/.test( $('#newMail').val() )){
         if(/\w{3,}/.test( $('#newName').val())){
@@ -96,7 +105,7 @@ class Formulario extends Component {
       } else{ $('#newMailErr').html('El correo no es válido'); }
     }
 
-    
+    //Diseño del panel de nuevo usuario  
     return(
       <form className="panel-login" onSubmit={validate}>
         <div className="panel-login-2-3">

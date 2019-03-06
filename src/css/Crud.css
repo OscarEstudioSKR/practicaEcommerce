@@ -74,10 +74,10 @@
       display: -webkit-box;
       display: -webkit-flex;
       display: flex;
-      -webkit-box-orient: horizontal;
+      -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
-      -webkit-flex-flow: row wrap;
-              flex-flow: row wrap;
+      -webkit-flex-flow: column nowrap;
+              flex-flow: column nowrap;
       height: 24%;
       margin-bottom: 5%;
       background: rgba(219, 219, 219, 0.089);
@@ -140,7 +140,7 @@
             align-items: center; }
     .contenedor-crud header div img {
       width: 20%;
-      max-width: 200px; }
+      max-width: 350px; }
     .contenedor-crud header div h2 {
       color: #738598;
       font-size: 0.9em;
@@ -167,13 +167,15 @@
       margin: 1%;
       font-weight: bold;
       cursor: pointer; }
+    .contenedor-crud header nav .a-destacada {
+      color: #b6b6b6; }
 
-.contenedor-crud div {
+.contenedor-crud footer {
   position: relative;
   width: 100%; }
-  .contenedor-crud div img {
+  .contenedor-crud footer img {
     width: 100%; }
-  .contenedor-crud div #boton-new-product {
+  .contenedor-crud footer #boton-new-product {
     position: absolute;
     top: 0;
     left: 0;
@@ -185,7 +187,7 @@
     max-width: 50%;
     height: 60px;
     background: none;
-    border: 1px solid red;
+    border: 1px solid #f700ff;
     outline-style: none;
     box-shadow: 1px 1px 5px blue;
     border-radius: 15px;
@@ -193,7 +195,88 @@
     font-size: 1.2em;
     font-weight: bold;
     cursor: pointer; }
-  .contenedor-crud div #boton-new-product:hover {
+  .contenedor-crud footer #boton-new-product:hover {
     width: 305px;
     height: 65px;
     font-size: 1.3em; }
+
+.contenedor-crud main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+  width: 75%;
+  margin: auto; }
+  .contenedor-crud main .obj-store {
+    position: relative;
+    width: 250px;
+    height: 495px;
+    margin: 1%;
+    border: 1px solid rgba(7, 44, 58, 0.342);
+    box-shadow: 1px 1px 30px rgba(74, 234, 255, 0.671); }
+    .contenedor-crud main .obj-store img {
+      width: 100%; }
+    .contenedor-crud main .obj-store .cobertura-botones {
+      position: absolute;
+      width: 100%;
+      height: 10%;
+      right: 0;
+      top: 0;
+      background: -webkit-linear-gradient(left, rgba(255, 0, 0, 0), rgba(255, 255, 255, 0.87));
+      background: linear-gradient(90deg, rgba(255, 0, 0, 0), rgba(255, 255, 255, 0.87)); }
+    .contenedor-crud main .obj-store button {
+      position: absolute;
+      height: 6%;
+      top: 2%;
+      border-radius: 10px;
+      outline-style: none;
+      border: 1px solid white;
+      color: #e9e9e9;
+      font-weight: bold; }
+    .contenedor-crud main .obj-store button:hover {
+      -webkit-filter: brightness(1.1);
+              filter: brightness(1.1); }
+    .contenedor-crud main .obj-store .boton-1 {
+      right: 16%;
+      width: 20%;
+      background: -webkit-linear-gradient(#6fabfa, rgba(54, 155, 238, 0.932));
+      background: linear-gradient(#6fabfa, rgba(54, 155, 238, 0.932)); }
+    .contenedor-crud main .obj-store .boton-2 {
+      right: 3%;
+      width: 11%;
+      background: -webkit-linear-gradient(#fa6fcc, rgba(238, 54, 155, 0.911));
+      background: linear-gradient(#fa6fcc, rgba(238, 54, 155, 0.911)); }
+    .contenedor-crud main .obj-store .linea-datos {
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-flow: row wrap;
+              flex-flow: row wrap;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+              align-items: center;
+      color: #434c54;
+      font-size: 0.9em; }
+      .contenedor-crud main .obj-store .linea-datos .p-marca {
+        width: 48%;
+        padding-left: 2%; }
+      .contenedor-crud main .obj-store .linea-datos .p-nombre {
+        width: 48%;
+        padding-left: 3%;
+        font-size: 1.1em; }
+      .contenedor-crud main .obj-store .linea-datos .p-talla {
+        width: 48%;
+        padding-right: 2%;
+        text-align: end; }
+      .contenedor-crud main .obj-store .linea-datos .p-precio {
+        width: 47%;
+        font-size: 1.2em;
+        padding-right: 2%;
+        font-weight: bold;
+        text-align: end; }

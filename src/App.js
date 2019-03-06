@@ -19,22 +19,17 @@ class App extends Component {
         }
       ],
       'filter': [
-        'Hombre',
-        'Mujer','Hombre',
-        'Mujer','Hombre',
-        'Mujer','Hombre',
-        'Mujer','Hombre',
-        'Mujer','Hombre',
-        'Mujer','Hombre',
-        'Mujer','Hombre',
-        'Mujer','Hombre',
-        'Mujer','Hombre',
-        'Mujer','Hombre',
-        'Mujer','Hombre',
-        'Mujer',
+        'Ropa de hombre',
+        'Ropa de mujer',
+        'Ropa de niños',
+        'Ropa mixta adultos',
+        'Ropa de verano',
+        'En oferta',
+        'Ropa de abrigo',
+        'Promocionada'
       ],
       'filterSelected': 0,
-      'store': [{}],
+      'store': [],
     }
   }
 
