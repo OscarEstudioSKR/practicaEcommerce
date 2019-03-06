@@ -66,6 +66,8 @@ class Crud extends Component {
     }
 
   render() {
+
+    // Api filer para añadir los enlaces de imagenes a los productos
       let subirImagen = (e)=>{
         let archivo = e.target.files[0];
         let lector = new FileReader();
@@ -78,9 +80,7 @@ class Crud extends Component {
                 });
             },false);
 
-        }else{
-            alert("El archivo "+archivo.name+' no es una imagen!');
-        }
+        }else{ alert("El archivo "+archivo.name+' no es una imagen!'); }
       }
 
     return (
@@ -90,11 +90,8 @@ class Crud extends Component {
         {this.props.state.panel === "newProduct" && 
             <form>
                 <section className="section-1-form">
-                    <img src={sinFoto}/>
-
+                    <img src={this.state.img}/>
                     <input type= "file" id="archivo" onChange={subirImagen}/>
-
-                    
                     <p>*Tamaño de imagen recomendada (500px750px).</p>
                 </section>
 
@@ -140,10 +137,11 @@ class Crud extends Component {
             {this.props.state.store.map((obj,i)=>{
                 return(
                     <div className="obj-store">
-                        <img src={obj.img}/>
+                        <div className="contenedor-img-producto">
+                            <img src={obj.img}/>
+                        </div>
                         <div className="cobertura-botones"></div>
                         <button className="boton-1">Editar</button>
-                        {console.log(JSON.stringify(obj))}
                         <button onClick={()=>{
                             this.cambiarStatePadre.bind(this, 'store',this.props.state.store.splice(i,1));
                             this.cambiarPagina();}
