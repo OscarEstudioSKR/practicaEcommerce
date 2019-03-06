@@ -118,7 +118,7 @@ class Crud extends Component {
             <button id="boton-new-product" onClick={()=>this.cambiarPagina('newProduct')} className="boton-new">Nuevo producto</button>
         </footer>
         <main>
-            {this.props.state.store.map((obj)=>{
+            {this.props.state.store.map((obj,i)=>{
                 return(
                     <div className="obj-store">
                         <img src={obj.img}/>
@@ -126,7 +126,7 @@ class Crud extends Component {
                         <button className="boton-1">Editar</button>
                         {console.log(JSON.stringify(obj))}
                         <button onClick={()=>{
-                            this.cambiarStatePadre.bind(this, 'store',this.props.state.store.splice(obj.id,1));
+                            this.cambiarStatePadre.bind(this, 'store',this.props.state.store.splice(i,1));
                             this.cambiarPagina();}
 
                             } className="boton-2">X</button>
