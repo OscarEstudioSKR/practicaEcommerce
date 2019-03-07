@@ -60,6 +60,7 @@ class Crud extends Component {
 
         //Si tiene la categoría
         if( this.state.categorias.some((obj, i)=>{ id = i; return obj === e.target.name;})){
+            
             if(!e.target.checked){
                 newCategoriaArr.splice(id,1);
                 this.setState({ 'categorias': newCategoriaArr })

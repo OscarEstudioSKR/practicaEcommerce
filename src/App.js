@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      'panel': "",
+      'panel': "login",
       changeState: (campo, valor)=>this.setState({ [campo]: valor }),
       'userID': 0,
       'users': [
@@ -34,7 +34,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
+        {console.log(JSON.stringify(this.state.store))}
        {(this.state.panel == "login" || this.state.panel == "newUser") && <Formulario state={this.state}/>}
        <Crud state={this.state}/>
       </div>
