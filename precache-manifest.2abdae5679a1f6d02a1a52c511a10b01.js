@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "3fb4a15342aa6dd3b5c5",
+    "revision": "554bfe48dcc86ced4054",
     "url": "/practicaEcommerce/static/css/main.14a17e94.chunk.css"
   },
   {
-    "revision": "3fb4a15342aa6dd3b5c5",
-    "url": "/practicaEcommerce/static/js/main.3fb4a153.chunk.js"
+    "revision": "554bfe48dcc86ced4054",
+    "url": "/practicaEcommerce/static/js/main.554bfe48.chunk.js"
   },
   {
     "revision": "f13a5bd91931373c504b",
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/practicaEcommerce/static/media/sinFoto.f3839eb6.jpeg"
   },
   {
-    "revision": "efcf18de16c3ea54c2bdafa69caa4398",
+    "revision": "f0ee59533f1a62b89ff96f7718e7c4fd",
     "url": "/practicaEcommerce/index.html"
   }
 ];
