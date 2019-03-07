@@ -132,7 +132,7 @@ class Crud extends Component {
         }
 
         {/* Crud de productos (web)*/}  
-        <nav>
+        <nav className="nav-superior">
             <img src={usuario}/>
             <a onClick={()=>this.cambiarPagina('login')}>{this.props.state.users[this.props.state.userID].nombre}</a>
         </nav>
@@ -142,14 +142,21 @@ class Crud extends Component {
                 <h2>Panel de gestión de productos</h2>
             </div>
             <nav>
-                {this.props.state.filter.map((item, i)=>{ return <a key={item+i} className="enlace-nav">{item.toUpperCase()}</a> })}
-                <a className="a-destacada">GESTIONAR CATEGORÍAS</a>
+                <a>MAIN</a>
+                <a className='main-selected'>PRODUCTOS</a>
+                <a>CUENTA</a>
             </nav>
         </header>
-        <footer>
+        <section>
             <img src={imgTienda} />
             <button id="boton-new-product" onClick={()=>this.cambiarPagina('newProduct')} className="boton-new">Nuevo producto</button>
-        </footer>
+
+        </section>
+        <nav className="nav-categorias">
+            {this.props.state.filter.map((item, i)=>{ 
+                return <a key={item+i} className="enlace-nav">{item.toUpperCase()}</a> })}
+            <a className="a-destacada">GESTIONAR CATEGORÍAS</a>
+        </nav>
         <main>
             {this.props.state.store.map((obj,i)=>{
                 return(
