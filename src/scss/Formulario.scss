@@ -140,18 +140,18 @@ $color3: rgb(184, 235, 255);
 @media(max-width:720px){
     .panel-login{
         border-radius: 0px;
-        height: 100vh;
-        min-height: 400px;
+        height: 100%;
         display: flex;
         flex-flow: column nowrap;
+        top: 0;
     }
     .panel-login-1, .panel-login-4{
         width: 100%;
-        height: 70%;
+        height: 75%;
         
     }
     .panel-login-2-3{
         width: 100%;
-        height: 30%;
+        height: 25%;
     }
 }
