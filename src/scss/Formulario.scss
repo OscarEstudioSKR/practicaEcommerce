@@ -66,12 +66,13 @@ $color3: rgb(184, 235, 255);
             margin-left: 5px;
         }
 
-        #pass, #mail{
+        #pass, #mail, #newName{
             width: 80%;
             height: 35px;
             margin-left: 3%;
             border: none;
             outline-style: none;
+            background: none;
         }
     }
 
