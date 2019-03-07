@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      'panel': "",
+      'panel': "login",
       changeState: (campo, valor)=>this.setState({ [campo]: valor }),
       'userID': 0,
       'users': [
