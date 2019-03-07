@@ -22,12 +22,9 @@ class App extends Component {
         'Todas',
         'Ropa de hombre',
         'Ropa de mujer',
-        'Ropa de niños',
         'Ropa mixta adultos',
         'Ropa de verano',
-        'En oferta',
         'Ropa de abrigo',
-        'Promocionada'
       ],
       'filterSelected': "Todas",
       'store': [],
