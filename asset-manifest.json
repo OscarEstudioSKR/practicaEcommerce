@@ -1,13 +1,16 @@
 {
-  "main.css": "/practicaEcommerce/static/css/main.040b10bd.chunk.css",
-  "main.js": "/practicaEcommerce/static/js/main.53915901.chunk.js",
-  "main.js.map": "/practicaEcommerce/static/js/main.53915901.chunk.js.map",
+  "main.css": "/practicaEcommerce/static/css/main.14a17e94.chunk.css",
+  "main.js": "/practicaEcommerce/static/js/main.3fb4a153.chunk.js",
+  "main.js.map": "/practicaEcommerce/static/js/main.3fb4a153.chunk.js.map",
   "runtime~main.js": "/practicaEcommerce/static/js/runtime~main.f13a5bd9.js",
   "runtime~main.js.map": "/practicaEcommerce/static/js/runtime~main.f13a5bd9.js.map",
-  "static/js/2.e4fab05a.chunk.js": "/practicaEcommerce/static/js/2.e4fab05a.chunk.js",
-  "static/js/2.e4fab05a.chunk.js.map": "/practicaEcommerce/static/js/2.e4fab05a.chunk.js.map",
+  "static/js/2.8c81445d.chunk.js": "/practicaEcommerce/static/js/2.8c81445d.chunk.js",
+  "static/js/2.8c81445d.chunk.js.map": "/practicaEcommerce/static/js/2.8c81445d.chunk.js.map",
   "index.html": "/practicaEcommerce/index.html",
-  "precache-manifest.1526e87e78ced01eba23bf8cacab1369.js": "/practicaEcommerce/precache-manifest.1526e87e78ced01eba23bf8cacab1369.js",
+  "precache-manifest.3621c72d8bbca021249dd9e66193a6b7.js": "/practicaEcommerce/precache-manifest.3621c72d8bbca021249dd9e66193a6b7.js",
   "service-worker.js": "/practicaEcommerce/service-worker.js",
-  "static/css/main.040b10bd.chunk.css.map": "/practicaEcommerce/static/css/main.040b10bd.chunk.css.map"
+  "static/css/main.14a17e94.chunk.css.map": "/practicaEcommerce/static/css/main.14a17e94.chunk.css.map",
+  "static/media/cecotec-logo.png": "/practicaEcommerce/static/media/cecotec-logo.40dde638.png",
+  "static/media/fondoTienda.jpg": "/practicaEcommerce/static/media/fondoTienda.e3be584a.jpg",
+  "static/media/sinFoto.jpeg": "/practicaEcommerce/static/media/sinFoto.f3839eb6.jpeg"
 }
