@@ -49,11 +49,26 @@ class Crud extends Component {
 
     //Añade categorías al this.state
     cambiarCategoria(e){ 
-        if( this.state.categorias.some((obj)=>{ return obj === e.target.name }) === false ){
-            let newCategoriaArr = this.state.categorias;
-            newCategoriaArr.push(e.target.name);
-            this.setState({ 'categorias': newCategoriaArr })}
-         }
+
+        let newCategoriaArr = this.state.categorias;
+        let id = 0;
+
+        //Si tiene la categoría
+        if( this.state.categorias.some((obj, i)=>{ id = i; return obj === e.target.name; id= i })){
+            if(!e.target.checked){
+                newCategoriaArr.splice(id,1);
+                this.setState({ 'categorias': newCategoriaArr })
+            }
+        //Si no tiene la categoría
+        }else{
+            if(e.target.checked){
+                newCategoriaArr.push(e.target.name);
+                this.setState({ 'categorias': newCategoriaArr })
+            }
+        }
+        alert(this.state.categorias);
+
+    }
 
     //Valida si debe guardar un nuevo producto o si existe uno similar lo sustituye
     validar(e){
@@ -113,16 +128,31 @@ class Crud extends Component {
                 </section>
 
                 <section className="section-2-form"> 
+
                     <h1>Nuevo producto</h1>
+
                     <input onChange={this.cambiarValor.bind(this)} name="nombre" className="input-form" type='text' placeholder="Nombre" value={this.state.nombre}/>
                     <input onChange={this.cambiarValor.bind(this)} name="marca" className="input-form" type='text' placeholder="Marca" value={this.state.marca}/>
                     <input onChange={this.cambiarValor.bind(this)} name="talla" className="input-form" type='text' placeholder="Talla" value={this.state.talla}/>
                     <input onChange={this.cambiarValor.bind(this)} name="precio" className="input-form" type='number' placeholder="Precio" value={this.state.precio}/>
+                    
                     <p>Categorías:</p>
+
                     <label className="caja-checkbox" >
                     {this.props.state.filter.map((item, i)=>{ 
-                        return ( <div><input onChange={this.cambiarCategoria.bind(this)} name={item} className="checkbox" type="checkbox"/> {item.toUpperCase()}</div> )})}           
+                        return ( 
+                            <div>
+                                <input onChange={this.cambiarCategoria.bind(this)}
+                                name={item} 
+                                checked={ this.state.categorias.some((cat)=>{ return cat === item }) }
+                                className="checkbox"
+                                type="checkbox"/>
+
+                                {item.toUpperCase()}
+                            </div> 
+                            )})}           
                     </label>
+
                     <div className="botones">
                         <button onClick={()=>this.cambiarPagina('')} className="boton-form">Eliminar</button>
                         <button onClick={this.validar.bind(this)} className="boton-form">Guardar</button>
@@ -158,8 +188,7 @@ class Crud extends Component {
             <label htmlFor="boton-categorias"><img src={botonLista} /></label>
             <nav className="menu-categorias">
                 <ul>
-                    <li><a className="enlace-nav">{'Añadir'}</a></li>
-                    <li><a className="enlace-nav">{'Eliminar'}</a></li>
+                    <li><a className="enlace-nav">{'CATEGORÍAS'}</a></li>
                     {this.props.state.filter.map((item, i)=>{ 
                         return <li><a key={item+i} className="enlace-nav">{item.toUpperCase()}</a></li> })}
                 </ul>
@@ -169,7 +198,10 @@ class Crud extends Component {
 
         <main>
             {this.props.state.store.map((obj,i)=>{
-                return(
+                if(obj.categorias.some((categoria)=>{
+                    return categoria === this.props.state.filterSelected || categoria === "Todas";
+                })){
+                    return(
                     <div className="obj-store">
                         <div className="contenedor-img-producto">
                             <img src={obj.img}/>
@@ -193,8 +225,10 @@ class Crud extends Component {
                         </div>
 
                     </div>
-                )
-            })}
+                )}
+                }
+                
+            )}
         </main>    
       </div>
     );

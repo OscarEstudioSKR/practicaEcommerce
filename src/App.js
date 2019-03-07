@@ -19,6 +19,7 @@ class App extends Component {
         }
       ],
       'filter': [
+        'Todas',
         'Ropa de hombre',
         'Ropa de mujer',
         'Ropa de niños',
@@ -28,7 +29,7 @@ class App extends Component {
         'Ropa de abrigo',
         'Promocionada'
       ],
-      'filterSelected': 0,
+      'filterSelected': "Ropa de hombre",
       'store': [],
     }
   }
