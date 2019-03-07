@@ -32,7 +32,7 @@ $color4: #434c54;
         flex-flow: row wrap;
         align-items: center;
         padding: 10px;
-
+        
         .section-1-form{
             width: 40%;
             height: 100%;
@@ -338,9 +338,48 @@ $color4: #434c54;
         main{
             justify-content: center;
             width: 100%;
+            margin-top: 2%;
             .obj-store{
+                margin-top: 2%;
                 width: 350px;
                 height: 650px;
+            }
+        }
+    }
+}
+@media(max-width: 950px){
+    .contenedor-crud{
+        
+        .fondoCompleto{
+            position: fixed;
+            margin-top: -50px;
+            width: 100%;
+            height: 120%;
+            background: $color4;
+        }
+
+        form{
+            width: 99%;
+            height: 100%;
+            flex-flow: column nowrap;
+            align-items: center;
+            position: absolute;
+            background-size: 100vh;
+            
+            padding: 0;
+            padding-top: 50px;
+
+            .section-1-form{
+                width: 300px;
+                max-width: 90%;
+                img{
+                    width: 100%;
+                }
+            }
+            .section-2-form{
+                width: 94%;
+                padding: 3%;
+                margin: 0;
             }
         }
     }

@@ -104,6 +104,7 @@ class Crud extends Component {
         {/* Panel formulario de nuevo producto*/}
         {this.props.state.panel === "newProduct" && 
             <form>
+                <div className="fondoCompleto" />
                 <section className="section-1-form">
                     <img src={this.state.img}/>
                     <div className="contenedor-archivo">

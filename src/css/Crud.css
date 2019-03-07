@@ -335,7 +335,40 @@
     -webkit-box-pack: center;
     -webkit-justify-content: center;
             justify-content: center;
-    width: 100%; }
+    width: 100%;
+    margin-top: 2%; }
     .contenedor-crud main .obj-store {
+      margin-top: 2%;
       width: 350px;
       height: 650px; } }
+
+@media (max-width: 950px) {
+  .contenedor-crud .fondoCompleto {
+    position: fixed;
+    margin-top: -50px;
+    width: 100%;
+    height: 120%;
+    background: #434c54; }
+  .contenedor-crud form {
+    width: 99%;
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center;
+    position: absolute;
+    background-size: 100vh;
+    padding: 0;
+    padding-top: 50px; }
+    .contenedor-crud form .section-1-form {
+      width: 300px;
+      max-width: 90%; }
+      .contenedor-crud form .section-1-form img {
+        width: 100%; }
+    .contenedor-crud form .section-2-form {
+      width: 94%;
+      padding: 3%;
+      margin: 0; } }
