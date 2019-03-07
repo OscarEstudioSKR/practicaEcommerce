@@ -3,9 +3,8 @@ import './css/Crud.css';
 import logoCecotec from './img/cecotec-logo.png';
 import imgTienda from './img/fondoTienda.jpg';
 import usuario from './img/usuario.png';
-import sinImagen from './img/sinImagen.png';
+import botonLista from './img/lista.png';
 import sinFoto from './img/sinFoto.jpeg';
-import botonUpload from './img/botonUpload.png';
 
 
 
@@ -153,11 +152,21 @@ class Crud extends Component {
             <button id="boton-new-product" onClick={()=>this.cambiarPagina('newProduct')} className="boton-new">Nuevo producto</button>
 
         </section>
+
         <nav className="nav-categorias">
-            {this.props.state.filter.map((item, i)=>{ 
-                return <a key={item+i} className="enlace-nav">{item.toUpperCase()}</a> })}
-            <a className="a-destacada">GESTIONAR CATEGORÍAS</a>
+            <input type="checkbox" id="boton-categorias"></input>
+            <label htmlFor="boton-categorias"><img src={botonLista} /></label>
+            <nav className="menu-categorias">
+                <ul>
+                    <li><a className="enlace-nav">{'Añadir'}</a></li>
+                    <li><a className="enlace-nav">{'Eliminar'}</a></li>
+                    {this.props.state.filter.map((item, i)=>{ 
+                        return <li><a key={item+i} className="enlace-nav">{item.toUpperCase()}</a></li> })}
+                </ul>
+            </nav>
+
         </nav>
+
         <main>
             {this.props.state.store.map((obj,i)=>{
                 return(

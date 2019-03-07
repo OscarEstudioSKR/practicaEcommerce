@@ -8,8 +8,8 @@
   right: 0;
   bottom: 0;
   margin: auto;
-  z-index: 1;
-  z-index: 2;
+  z-index: 0;
+  z-index: 3;
   width: 900px;
   height: 545px;
   background: #434c54;
@@ -46,7 +46,7 @@
       background-image: url("../img/botonUpload.png");
       background-size: 100% 100%; }
       .contenedor-crud form .section-1-form .contenedor-archivo #archivo {
-        z-index: 2;
+        z-index: 4;
         width: 100%;
         height: 100%;
         opacity: 0; }
@@ -192,7 +192,7 @@
     right: 0;
     bottom: 0;
     margin: auto;
-    z-index: 1;
+    z-index: 0;
     width: 300px;
     max-width: 50%;
     height: 60px;
@@ -211,6 +211,7 @@
     font-size: 1.3em; }
 
 .contenedor-crud .nav-categorias {
+  position: relative;
   width: 100%;
   background: #434c54;
   color: white;
@@ -225,9 +226,43 @@
   -webkit-box-pack: center;
   -webkit-justify-content: center;
           justify-content: center; }
-  .contenedor-crud .nav-categorias a {
-    padding: 1%;
+  .contenedor-crud .nav-categorias input {
+    display: none; }
+  .contenedor-crud .nav-categorias label {
+    display: none;
+    width: 30px;
+    height: 30px;
+    padding: 10px; }
+    .contenedor-crud .nav-categorias label img {
+      width: 100%;
+      height: 100%; }
+  .contenedor-crud .nav-categorias label:hover {
     cursor: pointer; }
+  .contenedor-crud .nav-categorias .menu-categorias {
+    z-index: 1;
+    display: block; }
+    .contenedor-crud .nav-categorias .menu-categorias ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-flow: row wrap;
+              flex-flow: row wrap;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+              justify-content: center; }
+    .contenedor-crud .nav-categorias .menu-categorias li {
+      display: block;
+      padding: 20px;
+      color: #afafaf; }
+    .contenedor-crud .nav-categorias .menu-categorias li:hover {
+      cursor: pointer;
+      -webkit-filter: brightness(2);
+              filter: brightness(2); }
 
 .contenedor-crud main {
   display: -webkit-box;
@@ -351,7 +386,6 @@
     background: #434c54; }
   .contenedor-crud form {
     width: 99%;
-    height: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-flow: column nowrap;
@@ -371,4 +405,25 @@
     .contenedor-crud form .section-2-form {
       width: 94%;
       padding: 3%;
-      margin: 0; } }
+      margin: 0; }
+  .contenedor-crud .nav-categorias {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+            justify-content: flex-end;
+    background: #434c54; }
+    .contenedor-crud .nav-categorias input:checked ~ .menu-categorias {
+      display: block; }
+    .contenedor-crud .nav-categorias label {
+      display: block; }
+    .contenedor-crud .nav-categorias .menu-categorias {
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+      position: absolute;
+      display: none;
+      top: 50px;
+      background: #434c54; }
+      .contenedor-crud .nav-categorias .menu-categorias ul {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+                flex-direction: column; } }
