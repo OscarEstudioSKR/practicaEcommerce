@@ -23,6 +23,10 @@ class Crud extends Component {
             'categorias': [],    
         }     
     }
+    styleSelect = {
+        'border-bottom': '2px solid rgb(152, 214, 255)',
+        'filter': 'brightness(2)'
+      };
 
     //Cierra y abre menus por nombre
     cambiarPagina(value){ this.props.state.changeState('panel', value) };
@@ -47,6 +51,7 @@ class Crud extends Component {
     //Cambia valores de this.state
     cambiarValor(e){ this.setState({ [e.target.name]: e.target.value }) }
 
+
     //Añade categorías al this.state
     cambiarCategoria(e){ 
 
@@ -54,7 +59,7 @@ class Crud extends Component {
         let id = 0;
 
         //Si tiene la categoría
-        if( this.state.categorias.some((obj, i)=>{ id = i; return obj === e.target.name; id= i })){
+        if( this.state.categorias.some((obj, i)=>{ id = i; return obj === e.target.name;})){
             if(!e.target.checked){
                 newCategoriaArr.splice(id,1);
                 this.setState({ 'categorias': newCategoriaArr })
@@ -70,7 +75,7 @@ class Crud extends Component {
 
     }
 
-    //Valida si debe guardar un nuevo producto o si existe uno similar lo sustituye
+    //Valida si debe guardar un nuevo producto o si existe uno similar y lo sustituye
     validar(e){
         e.preventDefault();
         let newStoreArr = this.props.state.store;
@@ -100,10 +105,12 @@ class Crud extends Component {
 
     // Api filer para añadir los enlaces de imagenes a los productos
       let subirImagen = (e)=>{
+
         let archivo = e.target.files[0];
         let lector = new FileReader();
 
         if(archivo.type.match(/image/)){
+
             lector.readAsDataURL(archivo);
             lector.addEventListener('load',(e)=>{
                 this.setState({
@@ -119,12 +126,16 @@ class Crud extends Component {
         
         {/* Panel formulario de nuevo producto*/}
         {this.props.state.panel === "newProduct" && 
+
             <form>
                 <div className="fondoCompleto" />
+
                 <section className="section-1-form">
                     <img src={this.state.img}/>
                     <div className="contenedor-archivo">
+
                         <input type= "file" id="archivo" onChange={subirImagen}/>
+                        
                     </div>
                     <p>*Tamaño de imagen recomendada (500px750px).</p>
                 </section>
@@ -211,7 +222,9 @@ class Crud extends Component {
                             <li>
                                 <a key={item+i} 
                                 onClick ={(e)=>{this.cambiarStatePadre('filterSelected', item)}} 
-                                className="enlace-nav">
+                                className="enlace-nav"
+                                
+                                style={item === this.props.state.filterSelected ? this.styleSelect : undefined}>
                                 {item.toUpperCase()}
                                 </a>
                             </li>
@@ -242,7 +255,7 @@ class Crud extends Component {
 
                         <div className="cobertura-botones"></div>
 
-                        <button className="boton-1" onClick={()=>{
+                        <button className="boton-1" onClick={(e)=>{
                             this.cambiarStatePadre.bind(this, 'store',this.props.state.store.splice(i,1));
                             this.editarProducto(obj);
                             }}>Editar</button>

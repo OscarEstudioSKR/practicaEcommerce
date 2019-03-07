@@ -29,7 +29,7 @@ class App extends Component {
         'Ropa de abrigo',
         'Promocionada'
       ],
-      'filterSelected': "Ropa de hombre",
+      'filterSelected': "Todas",
       'store': [],
     }
   }
@@ -37,8 +37,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
-        {console.log("Store: " + JSON.stringify(this.state.store))}
 
        {(this.state.panel == "login" || this.state.panel == "newUser") && <Formulario state={this.state}/>}
        <Crud state={this.state}/>

@@ -2,6 +2,13 @@ $color1: #3c415e;
 $color2: #b1b1b1;
 $color3: rgb(184, 235, 255);
 
+@mixin panel-50{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
 .back{
     width: 100%;
     height: 100%;
@@ -30,12 +37,7 @@ $color3: rgb(184, 235, 255);
     overflow: hidden;
 }
 
-@mixin panel-50{
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .botonSinEstilo{
     border-style: none;

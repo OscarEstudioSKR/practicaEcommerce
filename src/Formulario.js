@@ -48,26 +48,34 @@ class Formulario extends Component {
     return(  
       <form className="panel-login" onSubmit={validate}>
         <div className="panel-login-1">
+
           <img className="logoM" src={logoCecotec}/>
+
           <div className="contenedor-input">
             <img className="icono" src={correo}/>
-            <input id="mail" type="email" placeholder="Correo" />          
+            <input id="mail" type="email" placeholder="Correo" />   
           </div>
+
           <span id="mailErr" className="fallo"/>
+
           <div className="contenedor-input">
             <img className="icono" src={candado}/>
             <input id="pass" type="password" placeholder="Contraseña" />
           </div>
+
           <span id="passErr" className="fallo"/>
+
           <div className="contenedor-boton">
             <button className="boton-enviar" type="submit" >Enviar</button>
             <input className="boton-nuevaCuenta botonSinEstilo" onClick={cambiarPagina} defaultValue="Nueva cuenta"/>
           </div>
         </div>
+
         <div className="panel-login-2-3">
           <h1>Bienvenido!</h1>
           <p className="descripcion-text">Bienvenido al panel de gestión de tu Eccomerce. Por favor, introduce tus datos de usuario o crea una nueva cuenta.</p>
         </div>
+        
       </form>
     )
   }
