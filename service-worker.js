@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/practicaEcommerce/precache-manifest.ab887c3d91bf6e3278c0d428359e4f17.js"
+  "/practicaEcommerce/precache-manifest.da617a3ff566477cd9bd1fb182b67746.js"
 );
 
 workbox.clientsClaim();
