@@ -177,10 +177,10 @@ class Crud extends Component {
 
                             } className="boton-2">X</button>
                         <div className="linea-datos">
-                            <p className="p-marca">{obj.marca}</p> 
-                            <p className="p-talla">{"Talla "+obj.talla}</p>
+                            <p className="p-marca">{obj.marca === "" ? '*sin marca' : obj.marca}</p> 
+                            <p className="p-talla">{obj.talla === "" ? "talla no indicada" : "Talla: "+obj.talla}</p>
                             <p className="p-nombre"> { obj.nombre === "" ? 'Sin nombre' : obj.nombre } </p>
-                            <p className="p-precio">{obj.precio+"€"}</p>
+                            <p className="p-precio">{obj.precio === "" ? "0 €" : obj.precio+"€"}</p>
                         </div>
 
                     </div>
