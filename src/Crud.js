@@ -40,7 +40,7 @@ class Crud extends Component {
             'marca':  producto.marca,
             'talla':  producto.talla,
             'precio':  producto.precio,
-            'categorias':  producto.categorias,
+            'categorias': producto.categorias,
         });
         this.cambiarPagina('newProduct');
     }
@@ -54,7 +54,7 @@ class Crud extends Component {
 
     //Añade categorías al this.state
     cambiarCategoria(e){ 
-
+        console.log(">>>>> "+ JSON.stringify(this.state.categorias));
         let newCategoriaArr = this.state.categorias;
         let id = 0;
 
@@ -86,14 +86,14 @@ class Crud extends Component {
 
             this.setState({'id':this.props.state.store.length});
             newStoreArr.push(this.state);
-            this.props.state.changeState('store', newStoreArr);
+            this.cambiarStatePadre('store', newStoreArr);
         
         //Si ya existe
         }else{
             newStoreArr.map((obj, i)=>{
                 if(obj.nombre === this.state.nombre){
                     newStoreArr.splice(i,0,this.state);
-                    this.props.state.changeState('store', newStoreArr);
+                    this.cambiarStatePadre('store', newStoreArr);
                 }
             })       
 
@@ -157,17 +157,16 @@ class Crud extends Component {
                     <p>Categorías:</p>
 
                     <div className="caja-checkbox">
-                    {this.props.state.filter.map((item, i)=>{ 
+                    {this.props.state.filter.map((filtro, i)=>{ 
                         return ( 
                             <div>
-                                <label  htmlFor={item+i} />
-                                <input id={item+i} onChange={this.cambiarCategoria.bind(this)}
-                                name={item} 
-                                checked={ this.state.categorias.some((cat)=>{ return cat === item }) }
+                                <input onClick={this.cambiarCategoria.bind(this)}
+                                name={filtro} 
+                                checked={ this.state.categorias.some((cat)=>{ return cat === filtro }) }
                                 className="checkbox"
                                 type="checkbox"/>
 
-                                {item.toUpperCase()}
+                                {filtro.toUpperCase()}
                             </div> 
                             )})}           
                     </div>
@@ -200,7 +199,22 @@ class Crud extends Component {
         </header>
         <section>
             <img src={imgTienda} />
-            <button id="boton-new-product" onClick={()=>this.cambiarPagina('newProduct')} className="boton-new">Nuevo producto</button>
+            <button id="boton-new-product" 
+                onClick={()=>{
+                    this.cambiarPagina('newProduct');
+                    this.setState({
+                        'id': 0,
+                        'img': sinFoto,
+                        'nombre': "",
+                        'marca': "",
+                        'talla': "",
+                        'precio': "",
+                        'categorias': [],    
+                    })
+                    }}
+                className="boton-new">
+                Nuevo producto
+            </button>
 
         </section>
 
