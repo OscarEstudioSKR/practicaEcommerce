@@ -59,6 +59,7 @@ class Crud extends Component {
                 newCategoriaArr.splice(id,1);
                 this.setState({ 'categorias': newCategoriaArr })
             }
+
         //Si no tiene la categoría
         }else{
             if(e.target.checked){
@@ -66,7 +67,6 @@ class Crud extends Component {
                 this.setState({ 'categorias': newCategoriaArr })
             }
         }
-        alert(this.state.categorias);
 
     }
 
@@ -75,16 +75,18 @@ class Crud extends Component {
         e.preventDefault();
         let newStoreArr = this.props.state.store;
 
-        if(this.props.state.store.some((obj, i)=>{return obj.nombre === this.state.nombre})===false){
+        //Si no existe
+        if(this.props.state.store.some((obj)=>{return obj.nombre === this.state.nombre})===false){
 
             this.setState({'id':this.props.state.store.length});
             newStoreArr.push(this.state);
             this.props.state.changeState('store', newStoreArr);
-            
+        
+        //Si ya existe
         }else{
             newStoreArr.map((obj, i)=>{
                 if(obj.nombre === this.state.nombre){
-                    newStoreArr[i] = this.state;
+                    newStoreArr.splice(i,0,this.state);
                     this.props.state.changeState('store', newStoreArr);
                 }
             })       
@@ -129,6 +131,8 @@ class Crud extends Component {
 
                 <section className="section-2-form"> 
 
+
+
                     <h1>Nuevo producto</h1>
 
                     <input onChange={this.cambiarValor.bind(this)} name="nombre" className="input-form" type='text' placeholder="Nombre" value={this.state.nombre}/>
@@ -136,13 +140,16 @@ class Crud extends Component {
                     <input onChange={this.cambiarValor.bind(this)} name="talla" className="input-form" type='text' placeholder="Talla" value={this.state.talla}/>
                     <input onChange={this.cambiarValor.bind(this)} name="precio" className="input-form" type='number' placeholder="Precio" value={this.state.precio}/>
                     
+
+
                     <p>Categorías:</p>
 
-                    <label className="caja-checkbox" >
+                    <div className="caja-checkbox">
                     {this.props.state.filter.map((item, i)=>{ 
                         return ( 
                             <div>
-                                <input onChange={this.cambiarCategoria.bind(this)}
+                                <label  htmlFor={item+i} />
+                                <input id={item+i} onChange={this.cambiarCategoria.bind(this)}
                                 name={item} 
                                 checked={ this.state.categorias.some((cat)=>{ return cat === item }) }
                                 className="checkbox"
@@ -151,8 +158,7 @@ class Crud extends Component {
                                 {item.toUpperCase()}
                             </div> 
                             )})}           
-                    </label>
-
+                    </div>
                     <div className="botones">
                         <button onClick={()=>this.cambiarPagina('')} className="boton-form">Eliminar</button>
                         <button onClick={this.validar.bind(this)} className="boton-form">Guardar</button>
@@ -161,7 +167,10 @@ class Crud extends Component {
             </form>
         }
 
+
+
         {/* Crud de productos (web)*/}  
+
         <nav className="nav-superior">
             <img src={usuario}/>
             <a onClick={()=>this.cambiarPagina('login')}>{this.props.state.users[this.props.state.userID].nombre}</a>
@@ -183,30 +192,56 @@ class Crud extends Component {
 
         </section>
 
+
+        {
+            //Categorias
+        }
+
         <nav className="nav-categorias">
             <input type="checkbox" id="boton-categorias"></input>
             <label htmlFor="boton-categorias"><img src={botonLista} /></label>
+
             <nav className="menu-categorias">
                 <ul>
                     <li><a className="enlace-nav">{'CATEGORÍAS'}</a></li>
+
                     {this.props.state.filter.map((item, i)=>{ 
-                        return <li><a key={item+i} className="enlace-nav">{item.toUpperCase()}</a></li> })}
+
+                        return (
+                            <li>
+                                <a key={item+i} 
+                                onClick ={(e)=>{this.cambiarStatePadre('filterSelected', item)}} 
+                                className="enlace-nav">
+                                {item.toUpperCase()}
+                                </a>
+                            </li>
+                        ) 
+                        })}
+
                 </ul>
             </nav>
 
         </nav>
 
+        
+ 
         <main>
-            {this.props.state.store.map((obj,i)=>{
+            {
+                //Fichas de los productos
+
+            this.props.state.store.map((obj,i)=>{
                 if(obj.categorias.some((categoria)=>{
-                    return categoria === this.props.state.filterSelected || categoria === "Todas";
+                    return categoria === this.props.state.filterSelected || categoria === "Todas" || this.props.state.filterSelected === "Todas";
                 })){
                     return(
                     <div className="obj-store">
+
                         <div className="contenedor-img-producto">
                             <img src={obj.img}/>
                         </div>
+
                         <div className="cobertura-botones"></div>
+
                         <button className="boton-1" onClick={()=>{
                             this.cambiarStatePadre.bind(this, 'store',this.props.state.store.splice(i,1));
                             this.editarProducto(obj);
